@@ -12,10 +12,16 @@ i {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   background-color: #2c3333;
   color: #fff;
   padding: 25px 60px;
@@ -92,4 +98,71 @@ i {
 
 .bi-plus-lg {
   color: green;
+}
+
+/** 
+*cart page styles **/
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homeBtn,
+.checkout,
+.removeAll {
+  padding: 6px;
+  background: #2c3333;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  margin-top: 10px;
+}
+
+.checkout {
+  background-color: green;
+}
+.removeAll {
+  background-color: red;
+}
+
+.bi-x-lg {
+  color: red;
+  font-weight: bold;
+}
+
+/** shopping cart**/
+
+.shopping-cart {
+  display: grid;
+  grid-template-columns: repeat(1, 320px);
+  justify-content: center;
+  gap: 15px;
+}
+
+.cart-item {
+  border: 2px solid #2c3333;
+  border-radius: 5px;
+  display: flex;
+}
+
+.title-price-x {
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-price {
+  background-color: #2c3333;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
 }
