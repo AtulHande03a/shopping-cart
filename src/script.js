@@ -123,6 +123,7 @@ generateShop()
 let increment = (id) => {
   let selectedItem = id
   let search = basket.find((x) => x.id === selectedItem.id)
+
   if (!search) {
     basket.push({
       id: selectedItem.id,
@@ -132,8 +133,9 @@ let increment = (id) => {
     search.item += 1
   }
 
-  localStorage.setItem('data', JSON.stringify(basket))
   update(selectedItem.id)
+
+  localStorage.setItem('data', JSON.stringify(basket))
 }
 
 //decrement  item count
@@ -142,15 +144,17 @@ let decrement = (id) => {
   let selectedItem = id
   let search = basket.find((x) => x.id === selectedItem.id)
 
-  if (search.item === 0) {
-    return
-  } else {
+  if (search === undefined) return
+  else if (search.item === 0) return
+  else {
     search.item -= 1
   }
 
-  localStorage.setItem('data', JSON.stringify(basket))
-
   update(selectedItem.id)
+
+  basket = basket.filter((cartItem) => cartItem.item !== 0)
+
+  localStorage.setItem('data', JSON.stringify(basket))
 }
 
 // updating card count value
